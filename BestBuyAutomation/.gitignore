@@ -1,0 +1,9 @@
+__venv__
+venv
+.venv
+.env
+env.
+__env__
+env
+__pycache__*
+prices**
