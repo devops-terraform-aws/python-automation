@@ -13,9 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    services:
-      selenium:
-        image: selenium/standalone-chrome
+    # services:
+    #   selenium:
+    #     image: selenium/standalone-chrome
 
     steps:
     - uses: actions/checkout@v3
