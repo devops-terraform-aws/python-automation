@@ -29,6 +29,10 @@ jobs:
     #     ls -al
     #     sudo dpkg -i ./chrome/google-chrome-stable_current_amd64.deb
   
+    - name: debug
+      run: |
+        which google-chrome
+        google-chrome
 
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
