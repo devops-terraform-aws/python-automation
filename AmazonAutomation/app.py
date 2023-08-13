@@ -15,7 +15,8 @@ product_price = []
 def get_webpage():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     driver.get("https://www.amazon.com/")
-    keyword = input("Enter item name: ")
+    # keyword = input("Enter item name: ")
+    keyword = "PS5"
     search_box = driver.find_element(By.ID, 'twotabsearchtextbox')
     search_box.send_keys(keyword)
 
