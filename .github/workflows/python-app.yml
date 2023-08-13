@@ -29,12 +29,12 @@ jobs:
     #     ls -al
     #     sudo dpkg -i ./chrome/google-chrome-stable_current_amd64.deb
   
-    - name: debug
-      run: |
-        which google-chrome
-        sudo apt-get install -y xvfb
-        sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
-        sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable
+    # - name: debug
+    #   run: |
+    #     which google-chrome
+    #     sudo apt-get install -y xvfb
+    #     sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
+    #     sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable
 
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
