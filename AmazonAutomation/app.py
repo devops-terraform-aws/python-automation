@@ -24,8 +24,8 @@ def get_webpage():
 
     search_button = driver.find_element(By.ID, 'nav-search-submit-button')
     search_button.click()
-    driver.implicitly_wait(5)
-    sleep(5)
+    driver.implicitly_wait(15)
+    sleep(15)
 
     item_price = driver.find_elements(By.XPATH, './/span[@class="a-price-whole"]')
     item_fraction = driver.find_elements(By.XPATH, './/span[@class="a-price-fraction"]')
