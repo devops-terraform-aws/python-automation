@@ -3,7 +3,9 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+
 from time import sleep
+
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
