@@ -49,6 +49,8 @@ Follow the instructions below to setup your [linux/mac]environment for the proje
 1. Clone repository and change directory
 ```
 git clone git@github.com:DevOps-Fullstack-PythonCohort/AutomationProject.git
+```
+```
 cd AmazonAutomation
 ```
 

@@ -28,18 +28,18 @@ jobs:
     #     - name: Installing package list
     #     run: apt list --installed    
         
-    - name: Removing previous chrome instances on runner 
-      run: sudo apt purge google-chrome-stable  
+    # - name: Removing previous chrome instances on runner 
+    #   run: sudo apt purge google-chrome-stable  
       
-      # Need to fetch reqs if needed
-    - name: Installing all necessary packages
-      run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
-    - name: Install xvfb
-      run: sudo apt-get install xvfb
+    #   # Need to fetch reqs if needed
+    # - name: Installing all necessary packages
+    #   run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+    # - name: Install xvfb
+    #   run: sudo apt-get install xvfb
 
   
     - name: Build Application
       working-directory: ./AmazonAutomation
       run: |
-        pip install selenium webdriver_manager
+        python3 -m pip install -r requirements.txt
         python3 app.py
