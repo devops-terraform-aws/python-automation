@@ -47,5 +47,9 @@ jobs:
       working-directory: ./AmazonAutomation
       run: |
         python3 -m pip install -r requirements.txt
-        pip list
-
+        pip install --upgrade pip
+    
+    - name: Run Python App
+      working-directory: ./AmazonAutomation
+      run: |
+        python3 app.py
