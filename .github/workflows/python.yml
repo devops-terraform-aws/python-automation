@@ -1,4 +1,4 @@
-name: Python application
+name: Python Application
 
 on:
   push:
@@ -13,29 +13,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    # services:
-    #   selenium:
-    #     image: selenium/standalone-chrome
-
     steps:
     - uses: actions/checkout@v3
-    # - name: wget
-    #   uses: wei/wget@v1
-    #   with:
-    #     args: -qO- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    
-    # - name: extract chrome
-    #   run: |
-    #     ls -al
-    #     sudo dpkg -i ./chrome/google-chrome-stable_current_amd64.deb
-  
-    # - name: debug
-    #   run: |
-    #     which google-chrome
-    #     sudo apt-get install -y xvfb
-    #     sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
-    #     sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable
-
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:

@@ -5,23 +5,7 @@ In this project we will automate performing several actions on Amazon.com. The p
 - Conditionals, Loops, Function, Variables, Data types
 - Exploring modules
 
-## Collaborators
-
-- Team Lead: Brunel [@BrunelAmC]
-- Developers:
-  - Brunel [@BrunelAmC] BF
-  - Emmanuel [@ukohae] EU
-  - Lilian [@lilianetazo] LT
-  - Victor [@Akindademu-Victor] OA
-  - Clem  [@Clemseze]
-  - Gaelle P.[@OnwardForward] GP
-  - Rajiv_A [@millord237]
-  - annino1 [@annino1] AL
-  - patrick [@paddyI]
-
 ## Overview
-
-As a team, we'll build several functions that accomplish the following objectives and put them all together. The objectives will grow as we accomplish more and more tasks.
 
 We are looking to create software for recommending a sit-stand desk and would like to find the best desk for any individual. The following criteria are used to evaluate the best desk:
 
