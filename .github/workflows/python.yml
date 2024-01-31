@@ -35,5 +35,5 @@ jobs:
     - name: Build Application
       working-directory: ./AmazonAutomation
       run: |
-        pip list
+        pip install selenium webdriver_manager
         python3 app.py
