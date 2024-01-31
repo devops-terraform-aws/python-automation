@@ -1,11 +1,8 @@
-# This repository is the main repository for the Automation Project.
-# It contains all the automation projects done by groups of developers.
-
 # Table of Contents
-* [AmazonAutomation](#AmazonAutomation)
-* [InstagramAutomation](#InstagramAutomation)
-* [BestBuyAutomation](#BestBuyAutomation)
-* [JobsiteAutomation](#JobsiteAutomation)
+* [AmazonAutomation](https://github.com/devops-terraform-aws/python-automation/tree/main/AmazonAutomation)
+* [InstagramAutomation](https://github.com/devops-terraform-aws/python-automation/tree/main/InstagramAutomation)
+* [BestBuyAutomation](https://github.com/devops-terraform-aws/python-automation/tree/main/BestBuyAutomation)
+* [JobsiteAutomation](https://github.com/devops-terraform-aws/python-automation/tree/main/JobsiteAutomation)
 
 
 # Amazon Automation Project
@@ -50,16 +47,19 @@ Go through the following [tutorial](https://www.browserstack.com/guide/login-aut
 Follow the instructions below to setup your [linux/mac]environment for the project. For other environment, or when in doubt, review the class videos.
 
 1. Clone repository and change directory
+```
+git clone git@github.com:DevOps-Fullstack-PythonCohort/AutomationProject.git
+cd AmazonAutomation
+```
 
-        git clone git@github.com:DevOps-Fullstack-PythonCohort/AutomationProject.git
-        cd AmazonAutomation
 
 2. Create virtual environment
-  
-        python -m venv .venv
-        source .venv/bin/activate
+ ```
+ python -m venv venv && source venv/bin/activate
+ ``` 
 
 3. Install dependencies. Repeat if requirements.txt is updated.
-
-        python -m pip install -r requirements.txt
+```
+python -m pip install -r requirements.txt
+```
 
