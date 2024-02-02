@@ -27,7 +27,7 @@ jobs:
         working-directory: ./AmazonAutomation
         run: |
           python --version
-          python scraper.py
+          python app.py
 
 
 
