@@ -1,55 +1,83 @@
-name: Python Application
-
+name: scrape
 on:
-  push:
-    branches: [ "*" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-
+  workflow_dispatch:
 jobs:
-  build:
-
+  scrape:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.10.12
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10.12"
-    # - name: Install dependencies
-    #   working-directory: ./AmazonAutomation
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     pip install flake8 pytest
-    #     if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    #     - name: Installing package list
-    #     run: apt list --installed    
+      - name: Check out this repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Installed package list
+        run: apt list --installed
+      - name: Remove Chrome
+        run: sudo apt purge google-chrome-stable
+      - name: Remove default Chromium
+        run: sudo apt purge chromium-browser
+      - name: Install a new Chromium
+        run: sudo apt install -y chromium-browser
+      - name: Install all necessary packages
+        run: pip install requests beautifulsoup4 pandas webdriver-manager selenium
+      - name: Run the scraping script
+        run: python scraper.py
+
+
+
+# name: Python Application
+
+# on:
+#   push:
+#     branches: [ "*" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# permissions:
+#   contents: read
+
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Set up Python 3.10.12
+#       uses: actions/setup-python@v4
+#       with:
+#         python-version: "3.10.12"
+#     # - name: Install dependencies
+#     #   working-directory: ./AmazonAutomation
+#     #   run: |
+#     #     python -m pip install --upgrade pip
+#     #     pip install flake8 pytest
+#     #     if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+#     #     - name: Installing package list
+#     #     run: apt list --installed    
         
-    # - name: Removing previous chrome instances on runner 
-    #   run: sudo apt purge google-chrome-stable  
+#     # - name: Removing previous chrome instances on runner 
+#     #   run: sudo apt purge google-chrome-stable  
       
-    #   # Need to fetch reqs if needed
-    # - name: Installing all necessary packages
-    #   run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
-    # - name: Install xvfb
-    #   run: sudo apt-get install xvfb
+#     #   # Need to fetch reqs if needed
+#     # - name: Installing all necessary packages
+#     #   run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+#     # - name: Install xvfb
+#     #   run: sudo apt-get install xvfb
 
   
-    - name: Create virtual environment
-      working-directory: ./AmazonAutomation
-      run: |
-        python -m venv venv && source venv/bin/activate
+#     - name: Create virtual environment
+#       working-directory: ./AmazonAutomation
+#       run: |
+#         python -m venv venv && source venv/bin/activate
 
-    - name: Install requirements
-      working-directory: ./AmazonAutomation
-      run: |
-        python3 -m pip install -r requirements.txt
-        pip install --upgrade pip
+#     - name: Install requirements
+#       working-directory: ./AmazonAutomation
+#       run: |
+#         python3 -m pip install -r requirements.txt
+#         pip install --upgrade pip
     
-    - name: Run Python App
-      working-directory: ./AmazonAutomation
-      run: |
-        python3 app.py
+#     - name: Run Python App
+#       working-directory: ./AmazonAutomation
+#       run: |
+#         python3 app.py
