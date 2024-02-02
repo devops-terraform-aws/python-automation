@@ -41,6 +41,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+
+from webdriver_manager.core.os_manager import ChromeType
+
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from time import sleep
@@ -49,9 +52,26 @@ options = None  # Define options as a global variable
 
 product_price = []
 
+
+chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+chrome_options = Options()
+options = [
+    "--headless",
+    "--disable-gpu",
+    "--window-size=1920,1200",
+    "--ignore-certificate-errors",
+    "--disable-extensions",
+    "--no-sandbox",
+    "--disable-dev-shm-usage"
+]
+for option in options:
+    chrome_options.add_argument(option)
+
+
 def get_webpage():
     global options
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
     driver.get("https://www.amazon.com/")
     keyword = input("Enter item name: ")
     
